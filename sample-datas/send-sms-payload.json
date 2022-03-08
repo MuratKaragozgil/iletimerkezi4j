@@ -1,0 +1,48 @@
+[
+  {
+    "request": {
+      "authentication": {
+        "key": "",
+        "hash": ""
+      },
+      "order": {
+        "sender": "APITEST",
+        "sendDateTime": [],
+        "iys": "1",
+        "iysList": "BIREYSEL",
+        "message": {
+          "text": "Lorem ipsum dolor sit amet",
+          "receipents": {
+            "number": [
+              "505xxxxxxx",
+              "505xxxxxxx",
+              "505xxxxxxx"
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "request": {
+      "authentication": {
+        "key": "3373dcb20eb97fa575e0e214f321b08b",
+        "hash": "b3e1fed1fb4e877e1a6629fa28b5f8d6e79e8d20ff4c4effd5ee6cf71d9c12ab"
+      },
+      "order": {
+        "sender": "APITEST",
+        "sendDateTime": [],
+        "iys": "1",
+        "iysList": "BIREYSEL",
+        "message": {
+          "text": "Local ileti merkezi test şöç",
+          "receipents": {
+            "number": [
+              "905302682487"
+            ]
+          }
+        }
+      }
+    }
+  }
+]
