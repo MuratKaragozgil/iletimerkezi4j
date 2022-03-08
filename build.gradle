@@ -1,10 +1,11 @@
 plugins {
     id 'java'
-    id 'maven-publish'
 }
 
-group 'com.iletimerkezi4j'
-version '1.0'
+apply plugin: 'maven-publish'
+
+group 'com.github.muratkaragozgil'
+version '2.0'
 
 repositories {
     mavenCentral()
@@ -29,4 +30,17 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from components.java
+        }
+    }
+}
+
+wrapper {
+    gradleVersion = "7.2"
+    distributionType = Wrapper.DistributionType.ALL
 }
