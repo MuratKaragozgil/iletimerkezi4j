@@ -3,7 +3,7 @@ apply plugin: 'maven-publish'
 apply plugin: 'java-library'
 
 group 'com.github.muratkaragozgil'
-version '2.7'
+version '2.8'
 
 compileJava {
     sourceCompatibility = JavaVersion.VERSION_17
@@ -46,6 +46,7 @@ task javadocJar(type: Jar, dependsOn: javadoc) {
 }
 
 artifacts {
+    archives jar
     archives sourcesJar
     archives javadocJar
 }
@@ -56,7 +57,7 @@ afterEvaluate {
             release(MavenPublication) {
                 groupId = 'com.github.muratkaragozgil'
                 artifactId = 'iletimerkezi4j'
-                version = '2.7'
+                version = '2.8'
             }
         }
     }
