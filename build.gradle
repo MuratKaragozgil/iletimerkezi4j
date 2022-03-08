@@ -1,8 +1,9 @@
 apply plugin: 'java'
 apply plugin: 'maven-publish'
+apply plugin: 'java-library'
 
 group 'com.github.muratkaragozgil'
-version '2.5'
+version '2.6'
 
 compileJava {
     sourceCompatibility = JavaVersion.VERSION_17
@@ -40,7 +41,7 @@ afterEvaluate {
             release(MavenPublication) {
                 groupId = 'com.github.muratkaragozgil'
                 artifactId = 'iletimerkezi4j'
-                version = '2.5'
+                version = '2.6'
             }
         }
     }
