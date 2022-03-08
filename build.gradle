@@ -30,15 +30,3 @@ dependencies {
 test {
     useJUnitPlatform()
 }
-
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            groupId = 'com.iletimerkezi4j'
-            artifactId = 'iletimerkezi4j'
-            version = '1.0'
-
-            from components.java
-        }
-    }
-}
