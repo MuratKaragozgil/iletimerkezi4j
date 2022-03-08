@@ -1,11 +1,13 @@
-plugins {
-    id 'java'
-}
-
+apply plugin: 'java'
 apply plugin: 'maven-publish'
 
 group 'com.github.muratkaragozgil'
-version '2.4'
+version '2.5'
+
+compileJava {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
 
 repositories {
     mavenCentral()
@@ -32,14 +34,14 @@ test {
     useJUnitPlatform()
 }
 
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            groupId = 'com.github.muratkaragozgil'
-            artifactId = 'iletimerkezi4j'
-            version = '2.4'
-
-            from(components["java"])
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                groupId = 'com.github.muratkaragozgil'
+                artifactId = 'iletimerkezi4j'
+                version = '2.5'
+            }
         }
     }
 }
