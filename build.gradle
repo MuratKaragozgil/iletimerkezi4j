@@ -31,7 +31,7 @@ test {
 }
 
 group 'com.github.muratkaragozgil'
-version '2.9'
+version '3.0'
 description = 'iletimerkezi4'
 java.sourceCompatibility = JavaVersion.VERSION_17
 

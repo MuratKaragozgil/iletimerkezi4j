@@ -21,12 +21,11 @@ public class IletiMerkeziApiTest {
     @BeforeEach
     public void setUp() {
         iletiMerkeziApi = new IletiMerkeziApi("https://api.iletimerkezi.com", key, hash);
-//        String result = Hashing.hmacSha256(hash.getBytes(StandardCharsets.UTF_8)).toString();
     }
 
     @Test
     public void initialTest() throws IOException, InterruptedException {
-        iletiMerkeziApi.sendSingleSms("905302682487", "Local ileti merkezi test şöç").enqueue(new Callback<GlobalResponseModel>() {
+        iletiMerkeziApi.sendSingleSms("APITEST", "905302682487", "Local ileti merkezi test şöç").enqueue(new Callback<GlobalResponseModel>() {
             @Override
             public void onResponse(Call<GlobalResponseModel> call, Response<GlobalResponseModel> response) {
                 logger.info("Message is here ! " + response.message());
@@ -39,7 +38,7 @@ public class IletiMerkeziApiTest {
             }
         });
 
-        Response<GlobalResponseModel> response = iletiMerkeziApi.sendSingleSms("905302682487", "Local ileti merkezi test şöç").execute();
+        Response<GlobalResponseModel> response = iletiMerkeziApi.sendSingleSms("APITEST", "905302682487", "Local ileti merkezi test şöç").execute();
 
         Thread.sleep(10000);
     }

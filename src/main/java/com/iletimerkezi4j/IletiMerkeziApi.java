@@ -31,8 +31,8 @@ public class IletiMerkeziApi {
         sendSmsService = retrofit.create(IletiMerkeziSendSmsService.class);
     }
 
-    public Call<GlobalResponseModel> sendSingleSms(String gsmNumber, String messageText) {
-        OrderModel orderModel = OrderModel.builder().sender("APITEST").message(new MessageModel(messageText, new ReceipentsModel(Sets.newHashSet(gsmNumber)))).build();
+    public Call<GlobalResponseModel> sendSingleSms(String sender, String gsmNumber, String messageText) {
+        OrderModel orderModel = OrderModel.builder().sender(sender).message(new MessageModel(messageText, new ReceipentsModel(Sets.newHashSet(gsmNumber)))).build();
         SendSmsRequest request = SendSmsRequest.builder().authentication(authentication).order(orderModel).build();
         logger.info(request.toString());
         return sendSmsService.sendSms(new GlobalRequestModel(request));
